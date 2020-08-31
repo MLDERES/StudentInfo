@@ -1,4 +1,8 @@
-﻿IF OBJECT_ID('dbo.Enrollment', 'U') IS NOT NULL
+﻿Use PROJECTF2030
+GO
+-- XK75ekq$
+
+IF OBJECT_ID('dbo.Enrollment', 'U') IS NOT NULL
   DROP TABLE dbo.Enrollment
 GO
 

@@ -1,5 +1,6 @@
 ﻿using SqlExample;
 using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -38,7 +39,7 @@ namespace StudentInfo
 
         private bool makeDataBaseConnection()
         {
-            if (txtUser.TextLength == 0 | txtPassword.TextLength == 0 )
+            if (txtUser.TextLength == 0 | txtPassword.TextLength == 0)
             {
                 MessageBox.Show("UserName, Password field is empty");
                 return false;
@@ -52,6 +53,26 @@ namespace StudentInfo
             helper.Password = txtPassword.Text;
             helper.ServerName = "essql1.walton.uark.edu";
             return true;
+        }
+
+        private void btnHere_Click(object sender, EventArgs e)
+        {
+            if (makeDataBaseConnection())
+            {
+                var result = helper.GetDataTable(txtQuery.Text, CommandType.Text);
+                grdResults.DataSource = result;
+            }
+        }
+
+        private void btnNewWindow_Click(object sender, EventArgs e)
+        {
+            if (makeDataBaseConnection())
+            {
+                var result = helper.GetDataTable(txtQuery.Text, CommandType.Text);
+                var frm = new Details();
+                frm.DataForGrid = result;
+                frm.ShowDialog();
+            }
         }
     }
 }

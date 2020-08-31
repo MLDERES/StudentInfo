@@ -36,10 +36,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtQuery = new System.Windows.Forms.TextBox();
             this.btnHere = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDBName = new System.Windows.Forms.TextBox();
+            this.grdResults = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.grdResults)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDone
@@ -61,6 +63,7 @@
             this.btnNewWindow.TabIndex = 1;
             this.btnNewWindow.Text = "New Window";
             this.btnNewWindow.UseVisualStyleBackColor = true;
+            this.btnNewWindow.Click += new System.EventHandler(this.btnNewWindow_Click);
             // 
             // btnConnection
             // 
@@ -116,13 +119,14 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Query";
             // 
-            // textBox1
+            // txtQuery
             // 
-            this.textBox1.Location = new System.Drawing.Point(134, 171);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(227, 202);
-            this.textBox1.TabIndex = 7;
+            this.txtQuery.Location = new System.Drawing.Point(134, 171);
+            this.txtQuery.Multiline = true;
+            this.txtQuery.Name = "txtQuery";
+            this.txtQuery.Size = new System.Drawing.Size(227, 202);
+            this.txtQuery.TabIndex = 7;
+            this.txtQuery.Text = "select * from student";
             // 
             // btnHere
             // 
@@ -132,6 +136,7 @@
             this.btnHere.TabIndex = 9;
             this.btnHere.Text = "Here";
             this.btnHere.UseVisualStyleBackColor = true;
+            this.btnHere.Click += new System.EventHandler(this.btnHere_Click);
             // 
             // label4
             // 
@@ -150,16 +155,27 @@
             this.txtDBName.TabIndex = 10;
             this.txtDBName.Text = "Projectf2030";
             // 
+            // grdResults
+            // 
+            this.grdResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdResults.Location = new System.Drawing.Point(462, 38);
+            this.grdResults.Name = "grdResults";
+            this.grdResults.RowHeadersWidth = 51;
+            this.grdResults.RowTemplate.Height = 24;
+            this.grdResults.Size = new System.Drawing.Size(364, 363);
+            this.grdResults.TabIndex = 12;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(938, 471);
+            this.Controls.Add(this.grdResults);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtDBName);
             this.Controls.Add(this.btnHere);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtQuery);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.label1);
@@ -169,6 +185,7 @@
             this.Controls.Add(this.btnDone);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.grdResults)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,10 +201,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtQuery;
         private System.Windows.Forms.Button btnHere;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDBName;
+        private System.Windows.Forms.DataGridView grdResults;
     }
 }
 
